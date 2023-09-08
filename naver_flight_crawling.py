@@ -74,7 +74,7 @@ text_click_wait('span', '제외')
 ticket_info = WebDriverWait(driver, 30).until(EC.presence_of_all_elements_located((By.XPATH, '''//div[@class="concurrent_ConcurrentItemContainer__2lQVG result"]''')))
 
 # 티켓 리스트 생성
-ticket_list = [str(x+1) + "번째: " + ticket_info[x].text.replace("\n", " ") for x in range(10)]
+ticket_list = [str(x+1)+" " + ticket_info[x].text.replace("\n", " ") for x in range(10)]
 
 # 티켓 리스트 출력
 print(*ticket_list, sep='\n')
